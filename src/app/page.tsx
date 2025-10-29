@@ -1,36 +1,58 @@
-export const dynamic = 'force-dynamic'
+import Link from 'next/link';
+import { Activity, TrendingUp, Utensils } from 'lucide-react';
 
-export default function Index() {
+export default function HomePage() {
   return (
-    <div className="min-h-screen flex items-center justify-center">
-      <div className="text-center max-w-2xl px-4">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your App</h1>
-        <p className="text-xl mb-6 text-gray-600">
-          This template is configured to be absolutely lenient - builds never fail on validation errors.
-        </p>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm text-left">
-          <div className="p-4 bg-green-50 rounded-lg border border-green-200">
-            <h3 className="font-semibold text-green-800 mb-2">✅ Always Builds</h3>
-            <ul className="text-green-700 space-y-1">
-              <li>• TypeScript errors ignored</li>
-              <li>• ESLint warnings ignored</li>
-              <li>• Global error boundaries</li>
-              <li>• Asset type safety</li>
-            </ul>
+    <div className="min-h-screen bg-gradient-to-br from-secondary to-primary">
+      <div className="container mx-auto px-4 py-16">
+        <div className="max-w-4xl mx-auto text-center text-white">
+          <div className="flex justify-center mb-6">
+            <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full px-6 py-3">
+              <Activity className="w-6 h-6" />
+              <span className="font-bold text-lg">NUTRIFLOW</span>
+            </div>
           </div>
-          <div className="p-4 bg-blue-50 rounded-lg border border-blue-200">
-            <h3 className="font-semibold text-blue-800 mb-2">🚀 Production Ready</h3>
-            <ul className="text-blue-700 space-y-1">
-              <li>• Next.js 15.5.2 App Router</li>
-              <li>• Vercel optimized</li>
-              <li>• SSR/SEO friendly</li>
-              <li>• Browser API protection</li>
-            </ul>
+
+          <h1 className="text-5xl md:text-6xl font-bold mb-6">
+            Holistic Health,
+            <br />
+            Simplified
+          </h1>
+
+          <p className="text-xl md:text-2xl mb-4 text-white/90">
+            Track your nutrition, mood, and
+          </p>
+          <p className="text-xl md:text-2xl mb-12 text-white/90">
+            wellness journey in one place
+          </p>
+
+          <Link
+            href="/dashboard"
+            className="inline-block bg-white text-primary hover:bg-white/95 px-8 py-4 rounded-full font-semibold text-lg shadow-lg hover:shadow-xl transition-all"
+          >
+            Get Started Today
+          </Link>
+
+          <div className="grid md:grid-cols-3 gap-6 mt-20">
+            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6">
+              <Utensils className="w-12 h-12 mb-4 mx-auto" />
+              <h3 className="text-xl font-semibold mb-2">Daily Dashboard</h3>
+              <p className="text-white/80">Track meals, nutrition, and wellness metrics</p>
+            </div>
+
+            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6">
+              <Activity className="w-12 h-12 mb-4 mx-auto" />
+              <h3 className="text-xl font-semibold mb-2">Food Logging</h3>
+              <p className="text-white/80">Easy meal tracking with smart suggestions</p>
+            </div>
+
+            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6">
+              <TrendingUp className="w-12 h-12 mb-4 mx-auto" />
+              <h3 className="text-xl font-semibold mb-2">Insights & Trends</h3>
+              <p className="text-white/80">Discover patterns in your health journey</p>
+            </div>
           </div>
         </div>
-        <p className="mt-6 text-gray-500">
-          Start building your amazing project here! This template will never fail builds due to validation errors.
-        </p>
       </div>
     </div>
   );
